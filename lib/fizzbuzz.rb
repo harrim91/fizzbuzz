@@ -1,7 +1,4 @@
 def fizzbuzz num
-if num == 5
-  return "buzz"
-else
-   return "fizz"
- end
+  return "buzz" if num == 5
+  return "fizz"
 end
