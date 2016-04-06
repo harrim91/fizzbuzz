@@ -8,7 +8,9 @@ describe 'fizzbuzz' do
   end
 
   it 'returns "buzz" when passed a multiple of 5' do
-    expect(fizzbuzz(5)).to eq 'buzz'
+    (1..100).each do |n|
+      expect(fizzbuzz(n*5)).to eq 'buzz' if (n*5) % 3 != 0
+    end
   end
 
   it 'returns "fizzbuzz" when passed 15' do
