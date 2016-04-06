@@ -3,13 +3,14 @@ require 'fizzbuzz'
 describe 'fizzbuzz' do
 
   it 'returns "fizz" when passed a multiple of 3' do
-    expect(fizzbuzz(3)).to eq 'fizz'
-    expect(fizzbuzz(9)).to eq 'fizz'
+    (1..100).each do |n|
+      expect(fizzbuzz(n*3)).to eq 'fizz' if n*3 % 5 != 0
+    end
   end
 
   it 'returns "buzz" when passed a multiple of 5' do
     (1..100).each do |n|
-      expect(fizzbuzz(n*5)).to eq 'buzz' if (n*5) % 3 != 0
+      expect(fizzbuzz(n*5)).to eq 'buzz' if n*5 % 3 != 0
     end
   end
 
@@ -20,6 +21,8 @@ describe 'fizzbuzz' do
   end
 
   it 'returns the number when not divisible by 3 or 5' do
-    expect(fizzbuzz(2)).to eq 2
+    (1..100).each do |n|
+      expect(fizzbuzz(n)).to eq n if n % 3 != 0 && n % 5 != 0
+    end
   end
 end
