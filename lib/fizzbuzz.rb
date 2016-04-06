@@ -1,6 +1,8 @@
-def fizzbuzz num
-  return "fizzbuzz" if num % 15 == 0
-  return "buzz" if num % 5 == 0
-  return "fizz" if num % 3 == 0
-  num
+class Integer
+  def fizzbuzz
+    return "fizzbuzz" if self % 15 == 0
+    return "buzz" if self % 5 == 0
+    return "fizz" if self % 3 == 0
+    self
+  end
 end
